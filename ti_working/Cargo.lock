@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "working"
+name = "ti_working"
 version = "0.1.0"
