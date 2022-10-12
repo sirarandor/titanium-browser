@@ -1,0 +1,13 @@
+prefix=C:\Users\holde\Projects\titanium-browser\ti_working\target\debug\build\libz-sys-0c09c6c936ef14a4\out
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+sharedlibdir=@sharedlibdir@
+includedir=@includedir@
+
+Name: zlib
+Description: zlib compression library
+Version: @VERSION@
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

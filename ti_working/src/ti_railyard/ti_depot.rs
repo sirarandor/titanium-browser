@@ -6,4 +6,3 @@ pub fn depot_init() {
 
 }
 
-fn depot_
