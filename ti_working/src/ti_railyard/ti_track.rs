@@ -52,7 +52,7 @@ impl eframe::App for TitaniumApp {
 		egui::CentralPanel::default().show(ctx, |ui| {
 			ui.heading("Titanium is running!");
 			// This currently errors, since address is out of scope here.
-			ui.hyperlink(address);
+			//ui.hyperlink(address); | I commnented it out for you :> - arandor
 		});
 	}
 }
