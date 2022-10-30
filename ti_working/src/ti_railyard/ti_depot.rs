@@ -1,7 +1,7 @@
 // Basic functions that return basic things like site data
 pub mod basic {
     // Basic Page Request, returns raw HTML page data as a Vec:u8, accepting a url as a string.  
-    pub fn preq(u: &str) -> Vec<u8> {
+    pub fn preq(u: &str) -> String {
         // Create variables
         let mut s_h = curl::easy::Easy::new();
         let mut s_d = Vec::new(); 
@@ -22,8 +22,13 @@ pub mod basic {
             s_t.perform().unwrap(); 
         }
             //stdout().write(&s_d).unwrap();  | Debug function
-            //Return the data as a Vec:8
-        return s_d;
+        
+        let s_s = match String::from_utf8(s_d) {
+            Ok(v) => v,
+            Err(e) => panic!("Invalid utf8 sequence found at {}. Perhaps the site you are trying to access doesn't know what it's sending as a page?", e),
+        };
+        //Return a string slice
+        return s_s;
     }
 }
 //Functions that control depot, railyard will communicate to depot via this 
